@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6.0" client="site" method="upgrade">
+    <name>Facebook Profile</name>
+    <author>Lucas Radke</author>
+    <version>1.0.0</version>
+    <description>Display a Facebookprofile.</description>
+    <files>
+        <filename>mod_fbprofile.xml</filename>
+        <filename module="mod_fbprofile">mod_fbprofile.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+		<folder>sql</folder>
+		<folder>sql/mysql</folder>
+    </files>
+    <config>
+		<fields name="params">
+			<fieldset name="basic">
+			<field
+               name="Name"
+               type="text"
+               default="facebook"
+               label="Enter the name of your Facebookpage you want to display"
+				/>
+			<field
+               name="url"
+               type="text"
+               default="facebook"
+               label="Enter Facebookpage (http://facebook.com/XXX)"
+				/>
+		</fieldset>
+</fields>
+    </config>
+	<install>
+     <sql>
+         <file driver="mysql" charset="utf8">sql/mysql/install.mysql.utf8.sql</file>
+     </sql>
+</install>
+
+<uninstall>
+     <sql>
+         <file driver="mysql" charset="utf8">sql/mysql/uninstall.mysql.utf8.sql</file>
+     </sql>
+</uninstall>
+
+
+</extension>
